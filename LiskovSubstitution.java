@@ -3,6 +3,21 @@ LSP (Liskov Substitution Principle) => berfokus untuk menggantikan objek dari ke
 dari kelas turunan tanpa mengubah perilaku yang diharapkan dari program
 */
 
+// Contoh yang salah
+// class Chikhen extends Animal {
+//     @Override
+//     public void eat() {
+//         System.out.println("Dedeg");
+//     }
+
+//     @Override
+//     public void breed() {
+//         // Mengubah perilaku yang diharapkan dengan menambahkan exception
+//         throw new UnsupportedOperationException("Chikhen cannot breed in this way");
+//     }
+// }
+
+// Contoh yang benar
 public class LiskovSubstitution {
     public static void main(String[] args) {
 
@@ -28,7 +43,7 @@ class Animal {
 
 class Rabbit extends Animal {
 
-    @Override // Menggantikan fungsi dari kelas parents tanpa mengubah perilaku
+    @Override // Menggantikan fungsi dari kelas parents tanpa mengubah perilaku dari program
     public void eat() {
         System.out.println("Wortel");
     }
