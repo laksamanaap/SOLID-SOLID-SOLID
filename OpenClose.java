@@ -26,15 +26,12 @@ public class OpenClose {
     public static void main(String[] args) {
         FullTimeEmployee fullTime = new FullTimeEmployee(35000);
         ContractEmployee contractTime = new ContractEmployee(25000);
-        FreelanceEmployee freelanceTime = new FreelanceEmployee(25000);
 
         double bonusFullTime = fullTime.calculateBonus();
         double bonusContractTime = contractTime.calculateBonus();
-        double bonusFreelanceTime = freelanceTime.calculateBonus();
 
         System.out.println("Bonus karyawan fullTime : " + bonusFullTime);
         System.out.println("Bonus karyawan contractTime : " + bonusContractTime);
-        System.out.println("Bonus karyawan freelanceTime : " + bonusFreelanceTime);
     }
 }
 
@@ -50,12 +47,12 @@ class Employee {
     };
 }
 
-class FullTimeEmployee extends Employee {
+class FullTimeEmployee extends Employee { // Mewarisi class employee
     public FullTimeEmployee(double salary) {
         super(salary); // => punya hak khusus akses ke class parent
     }
 
-    @Override // => ditimpa dengan fungsi calculate bonus yang baru
+    @Override // => ditimpa dengan fungsi calculateBonus yang baru
     public double calculateBonus() {
         return salary * 1.1;
     }
@@ -69,16 +66,5 @@ class ContractEmployee extends Employee {
     @Override
     public double calculateBonus() {
         return salary * 0.7;
-    }
-}
-
-class FreelanceEmployee extends Employee {
-    public FreelanceEmployee(double salary) {
-        super(salary);
-    }
-
-    @Override
-    public double calculateBonus() {
-        return salary * 0.3;
     }
 }
