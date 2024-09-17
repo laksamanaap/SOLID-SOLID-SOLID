@@ -1,10 +1,4 @@
-// ISP (Interface Segregration Principle) => Membagi interface ke beberapa interface yang lebih kecil dan menggunakan sesuai kebutuhan
-
-public class InterfaceSegregation {
-    public static void main(String[] args) {
-        System.out.println("ISP");
-    }
-}
+// ISP (Interface Segregration Principle) => Membagi interface ke beberapa interface yang lebih kecil dan menggunakannya sesuai kebutuhan
 
 // Contoh yang salah
 // interface cewe {
@@ -25,6 +19,12 @@ public class InterfaceSegregation {
 // }
 // }
 
+public class InterfaceSegregation {
+    public static void main(String[] args) {
+        System.out.println("ISP");
+    }
+}
+
 // Contoh yang benar
 interface cewe {
     void eat();
@@ -36,12 +36,11 @@ interface Ribetable {
     void ribet();
 }
 
-interface Eatable {
+interface CanEat {
     void eat();
 }
 
-class Laksa implements Eatable {
-
+class Laksa implements CanEat {
     @Override
     public void eat() {
         System.out.println("Makcik");

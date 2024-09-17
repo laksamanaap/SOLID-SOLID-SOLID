@@ -13,7 +13,7 @@ dari kelas turunan tanpa mengubah perilaku yang diharapkan dari program
 //     @Override
 //     public void breed() {
 //         // Mengubah perilaku yang diharapkan dengan menambahkan exception
-//         throw new UnsupportedOperationException("Chikhen cannot breed in this way");
+//         throw new UnsupportedOperationException("Sepeda cannot breed in this way");
 //     }
 // }
 

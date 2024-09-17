@@ -17,6 +17,8 @@
 //             return salary * 0.7;
 //         } else if (type.equals("Freelance")) {
 //             return 0;
+//         }else if (type.equals("Borongan")) {
+//             return 0;
 //         } else {return 0}
 //     }
 // }
@@ -26,17 +28,20 @@ public class OpenClose {
     public static void main(String[] args) {
         FullTimeEmployee fullTime = new FullTimeEmployee(35000);
         ContractEmployee contractTime = new ContractEmployee(25000);
+        BoronganEmployee boronganTime = new BoronganEmployee(15000);
 
         double bonusFullTime = fullTime.calculateBonus();
         double bonusContractTime = contractTime.calculateBonus();
+        double bonusBoronganTime = boronganTime.calculateBonus();
 
         System.out.println("Bonus karyawan fullTime : " + bonusFullTime);
         System.out.println("Bonus karyawan contractTime : " + bonusContractTime);
+        System.out.println("Bonus karyawan boronganTime : " + bonusBoronganTime);
     }
 }
 
 class Employee {
-    public double salary; // bisa diakses oleh anak anaknya
+    public double salary; // bisa diakses oleh sublcass (anak anaknya)
 
     public Employee(double salary) {
         this.salary = salary;
@@ -66,5 +71,16 @@ class ContractEmployee extends Employee {
     @Override
     public double calculateBonus() {
         return salary * 0.7;
+    }
+}
+
+class BoronganEmployee extends Employee {
+    public BoronganEmployee(double salary) {
+        super(salary);
+    }
+
+    @Override
+    public double calculateBonus() {
+        return salary * 0.3;
     }
 }

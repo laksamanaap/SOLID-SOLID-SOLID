@@ -7,14 +7,14 @@
 //     public int id;
 //     public double salary;
 
-//     // 1
+//     // 1 setter
 //     public Employee(String name, int id, double salary) {
 //         this.name = name;
 //         this.id = id;
 //         this.salary = salary;
 //     }
 
-//     // 2
+//     // 2 hitung bonus gaji
 //     public double calculateSalary() {
 //         return salary * 1.1; 
 //     }
